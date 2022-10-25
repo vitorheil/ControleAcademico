@@ -1,7 +1,7 @@
 <template>
   <div class="header">
-    <img class="logoUdesc" src="../assets/udesc.jpg" />
-    <button class="btnSair">Sair</button>
+    <img class="Udesc" src="../assets/udesc.jpg" />
+    <button class="btnLeave">Sair</button>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 </script>
 
 <style>
-.logoUdesc{ 
+.Udesc{ 
     width: 10rem;
 }
 *{
@@ -25,7 +25,7 @@ export default {
     
     justify-content: space-between;
 }
-.btnSair{
+.btnLeave{
     display: flex;
     font-size: 2rem;
     border: none;
