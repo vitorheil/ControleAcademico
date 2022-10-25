@@ -1,58 +1,60 @@
 <template>
   <div class="container">
     <div class="adminContainer">
-      <div class="homeAdmin">
+      <div class="homeAdmin" v-for="(opcao, index) in listaOpcoes" :key="index">
         <div>
-          <p class="nameTag">Usuario</p>
-          <ph-user class="icon" />
-        </div>  
-      </div>
-      <div class="homeAdmin">
-        <div>
-        <p class="nameTag">Matricula</p>
-        <ph-address-book class="icon" :size="32" />
-      </div>
-      </div>
-      <div class="homeAdmin">
-        <div>
-        <p class="nameTag">Matricula Turma </p>
-        <ph-folder-simple-user class="icon" :size="32" />
+              <p class="nameTag">{{opcao.secao}}</p>
+              <font-awesome-icon 
+              :icon="opcao.icone" 
+              class="icon"
+              />
         </div>
-      </div>
-      <div class="homeAdmin">
-        <div>
-        <p class="nameTag">Disciplina</p>
-        <ph-books class="icon" :size="32" />
-        </div>
-      </div>
-      <div class="homeAdmin">
-        <div>
-        <p class="nameTag">Papel</p>
-        <ph-scroll class="icon" :size="32" />
-        </div>
-      </div>
-      <div class="homeAdmin"> 
-        <div>
-        <p class="nameTag">Ação</p>
-        <ph-scissors class="icon" :size="32" />
         </div>
       </div>
     </div>
-  </div>
+  
 </template>
 
 <script>
-import { PhUser, PhAddressBook, PhFolderSimpleUser, PhBooks, PhScroll, PhScissors } from "phosphor-vue";
+
 
 export default {
- components: {
-    PhUser,
-    PhAddressBook,
-    PhFolderSimpleUser,
-    PhBooks,
-    PhScroll,
-    PhScissors,
- }
+  data(){
+    return{
+      listaOpcoes: [
+        {
+          secao: "USUARIOS",
+          icone: "fa-solid fa-user",
+          path: "users",
+        },
+        {
+          secao: "MATRICULA",
+          icone: "fa-solid fa-book",
+          path: "enrolled",
+        },
+        {
+          secao: "TURMA",
+          icone: "fa-solid fa-book-open-reader",
+          path: "enrolledClass",
+        },
+        {
+          secao: "DISCIPLINAS",
+          icone: "fa-solid fa-book-open",
+          path: "subjects",
+        },
+        {
+          secao: "PAPEL",
+          icone: "fa-solid fa-scroll",
+          path: "role",
+        },
+        {
+          secao: "ACAO",
+          icone: "fa-solid fa-location-crosshairs",
+          path: "action",
+        },
+      ]
+    }
+  }
 }
 </script>
 
@@ -86,9 +88,9 @@ export default {
 }
 .icon{
   color: white;
-  margin-top: 25px;
-  width: 12rem;
-  height: 12vh;
+  margin-top: 30px;
+  width: 10rem;
+  height: 10vh;
   
 }
 .icon:hover{
