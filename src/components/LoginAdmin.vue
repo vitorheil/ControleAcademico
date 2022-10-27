@@ -19,6 +19,7 @@
 
 <script lang="ts">
 export default {
+    name: "LoginAdmin",
     data(){
         return{
 
@@ -28,7 +29,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .loginUser{
     display: flex;
     width: 35rem;

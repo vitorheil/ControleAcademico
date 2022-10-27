@@ -19,6 +19,7 @@
 
 
 export default {
+  name: "HomeAdmin",
   data(){
     return{
       listaOpcoes: [
@@ -58,7 +59,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .homeAdmin{
   width: 20rem;

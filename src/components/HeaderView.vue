@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style>
+<style >
 .Udesc{ 
     width: 10rem;
 }
@@ -22,7 +22,6 @@ export default {
 .header{
     display: flex;
     background: black;
-    
     justify-content: space-between;
 }
 .btnLeave{

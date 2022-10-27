@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/req/options/UrlView.js", "src/req/options/HeadersView.js"  ],
   "exclude": [
     "node_modules"
   ]
