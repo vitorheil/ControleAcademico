@@ -9,21 +9,21 @@ async function createEnrolled(idUser, role, classGroup, finalGrade, frequency){
 
 async function readEnrolled(){
     const path = `/enrolled`
-    const req = await http.get(path, await headers.headers())
+    const req = await http.get(path, {headers: await headers.headers()})
     return req
 }
 async function readEnrolledById(id){
     const path = `/enrolled/${id}`
-    const req = await http.get(path, await headers.headers())
+    const req = await http.get(path, {headers: await headers.headers()})
     return req
 }
 async function updateEnrolled(id, idUser,role, classGroup, finalGrade, frequency){
     const path = `/enrolled/update/${id}`
-    const req = await http.put(path, {idUser: idUser, role: role, classGroup:classGroup, finalGrade:finalGrade, frequency: frequency}, await headers.headers())
+    const req = await http.put(path, {idUser: idUser, role: role, classGroup:classGroup, finalGrade:finalGrade, frequency: frequency}, {headers: await headers.headers()})
     return req
 }
 async function deleteEnrolled(id){
     const path = `/enrolled/delete/${id}`
-    const req = await http.delete(path, await headers.headers())
+    const req = await http.delete(path, {headers: await headers.headers()})
     return req
 }

@@ -16,7 +16,7 @@ import headers from "../options/HeadersView"
 
 async function loginUser(cpf, password){
     const path = `/login`;
-    const req = await http.post(path, { cpf: cpf, password: password }, headers.headers());
+    const req = await http.post(path, { cpf: cpf, password: password }, {headers: await headers.headers()});
 
     if (req.headers.headers['authorization']) {
 
@@ -29,19 +29,19 @@ async function loginUser(cpf, password){
 
 async function createUser(cpf, email, name, surname, password, telephone, address, register){
     const path = `/users/create`
-    const req = await http.post(path, {cpf: cpf, email: email, name: name, surname: surname, password: password, telephone: telephone, address: address, register: register }, await headers.headers());
+    const req = await http.post(path, {cpf: cpf, email: email, name: name, surname: surname, password: password, telephone: telephone, address: address, register: register }, {headers: await headers.headers()});
     return req
 }
 
 async function readUser(){
     const path = `/users`
-    const req = await http.get(path,  await headers.headers() )
+    const req = await http.get(path,  {headers: await headers.headers()} )
     return req
 }
 
 async function readUserById(id){
     const path = `/users/${id}`
-    const req = await http.get(path, await headers.headers() )
+    const req = await http.get(path, {headers: await headers.headers()} )
     return req
 }
 
@@ -53,12 +53,12 @@ async function updateUser(id,cpf, email, name, surname, password, telephone, add
 
 async function deleteUser(id) {
     const path = `/users/delete/${id}`
-    const req = await http.delete(path, await headers.headers())
+    const req = await http.delete(path, {headers: await headers.headers()})
     return req
 }
 
 async function logout(){
     const path = `/logout`
-    const req = await http.get(path, await headers.headers())
+    const req = await http.get(path, {headers: await headers.headers()})
     return req
 }
